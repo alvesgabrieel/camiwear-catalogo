@@ -18,7 +18,6 @@ export const MainContent = styled.div`
     @media (max-width: 600px) {
         >img{
             width: 100%;
-            height: 100vh;
             object-fit: cover;
         }
     }
