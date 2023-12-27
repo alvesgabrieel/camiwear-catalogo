@@ -7,6 +7,8 @@ export const MainContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
+    height: 100vh;
 
     >input {
         border-radius: 8px;
@@ -20,9 +22,7 @@ export const MainContent = styled.div`
             width: 100%;
             object-fit: cover;
         }
-    }
-
-    
+    }    
 `
 
 export const ImgContent = styled.div`
