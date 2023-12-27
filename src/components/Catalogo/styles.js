@@ -15,11 +15,15 @@ export const MainContent = styled.div`
         margin-bottom: 18px;
     }
 
-    >img{
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
+    @media (max-width: 600px) {
+        >img{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
     }
+
+    
 `
 
 export const ImgContent = styled.div`

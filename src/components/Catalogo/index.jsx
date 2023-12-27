@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import * as S from './styles';
 
-import Img from '../../assets/imgs/vestido-pink-removebg.png';
+import Img from '../../assets/imgs/vestido-pink-nobg.png';
 import logo from '../../assets/imgs/CAMIWEAR-logo-nobg.png';
 
 const Catalogo = () => {
