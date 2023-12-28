@@ -1,19 +1,20 @@
 import Produtos from "../../Produtos"
+import * as S from './styles'
 
 function ListaProdutos() { 
 
   return (
-    <>
+    <S.MainContent>
       <ul>
         {Produtos.map((item, index) => (
           <li key={index}>
-            <p>Titulo: {item.titulo}</p>
-            <p>Preço: R${item.preço}</p>
             <img src={item.imagem} alt={`Imagem do produto ${item.titulo}`} />
+            <p>{item.titulo}</p>
+            <p>R${item.preço}</p>
           </li>
         ))}
       </ul>
-    </>
+    </S.MainContent>
   )
 }
 
