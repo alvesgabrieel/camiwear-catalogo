@@ -1,14 +1,18 @@
-import EstiloGlobal from "./styles"
-import Catalogo from "./components/Catalogo"
+import { BrowserRouter } from "react-router-dom";
 
-function App() { 
+import EstiloGlobal from "./styles";
 
+import Rotas from "./routes";
+
+function App() {
   return (
     <>
-      <EstiloGlobal />
-      <Catalogo />
+      <BrowserRouter>
+        <EstiloGlobal />
+        <Rotas />
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
