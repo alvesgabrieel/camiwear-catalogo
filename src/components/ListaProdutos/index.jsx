@@ -10,7 +10,10 @@ function ListaProdutos() {
         {Produtos.map((item, index) => (
           <li key={index}>
             <Link to={`/produto/${index}`}>
-              <img src={item.imagem} alt={`Imagem do produto ${item.titulo}`} />
+              <img
+                src={item.imagem[0]}
+                alt={`Imagem do produto ${item.titulo}`}
+              />
               <p>{item.titulo}</p>
               <p>R${item.preço}</p>
             </Link>
