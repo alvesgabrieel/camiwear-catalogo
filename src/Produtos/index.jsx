@@ -9,50 +9,52 @@ import vestido2 from "../assets/imgs/vestido2.jpg";
 import MaioRetro from "../assets/imgs/maio-retro.jpg";
 import ConjuntoPraia from "../assets/imgs/conjunto-praia.jpg";
 import ConjuntoArtesanal from "../assets/imgs/conjunto-artesanal.jpg";
-import ConjuntoArtesanal2 from "../assets/imgs/conjunto-artesanal2.jpg";
+import CalcaPantalona from "../assets/imgs/conjunto-artesanal2.jpg";
+import VestidoMacrame from "../assets/imgs/vestido-mecrame.jpg";
+import saiaPrata from "../assets/imgs/saia1.jpg";
+import saiaPretaComTop from "../assets/imgs/saia2.jpg";
+import conjuntoBiquini from "../assets/imgs/conjunto-biquini.jpg";
 
 const Produtos = [
-  //Conjunto Queridinho
+  //Saia preta com top
   {
-    titulo: "Conjunto Queridinho",
-    preçoTotal: 115.0,
-    preçoPeça: [
-      {
-        tiara: 18.0,
-        parteDeCima: 57.6,
-        parteDeBaixo: 57.5,
-      },
-    ],
-    imagem: [ConjuntoQueridinhoImagem],
-    cores: [],
+    titulo: "Saia preta com top",
+    preço: 60.0,
+    preçoPeça: [{}],
+    imagem: [saiaPretaComTop],
+    cores: ["único"],
   },
 
-  //Conjunto Artesanal
+  //Calça Pantalona
   {
-    titulo: "Conjunto Artesanal",
-    preço: 180.0,
-    preçoPeça: [
-      {
-        parteDeCima: 60.0,
-        calça: 140.0,
-      },
-    ],
-    imagem: [ConjuntoArtesanal, ConjuntoArtesanal2],
+    titulo: "Calça pantalona",
+    preço: 140.0,
+    preçoPeça: [{}],
+    imagem: [CalcaPantalona],
+    cores: ["único"],
+  },
+
+  //Top queridinho artesanal
+  {
+    titulo: "Top queridinho artesanal",
+    preço: 60.0,
+    preçoPeça: [{}],
+    imagem: [ConjuntoArtesanal],
     cores: ["único"],
   },
 
   //Conjunto Praia
   {
     titulo: "Conjunto Praia",
-    preço: 130.0,
+    preço: 127.5,
     preçoPeça: [
       {
-        parteDeCima: 70.0,
-        short: 75.0,
+        top: 67.5,
+        short: 60.0,
       },
     ],
     imagem: [ConjuntoPraia],
-    cores: ["único"],
+    cores: ["short preto", "short prata", "cropped preto", "cropped prata"],
   },
 
   //Maiô Gabb
@@ -71,22 +73,29 @@ const Produtos = [
 
   //Maiô Retrô
   {
-    titulo: "Maiô Retrô",
+    titulo: "Maiô Reto",
     preço: 150.0,
     preçoPeça: [{}],
     imagem: [MaioRetro],
-    cores: ["único"],
+    cores: ["prata", "preto", "preto/prata"],
   },
 
-  //Top May
+  //vestido macramê
   {
-    titulo: "Top May",
+    titulo: "Vestido em macramê com pedraria",
+    preço: 80.0,
+    preçoPeça: [{}],
+    imagem: [VestidoMacrame],
+    cores: ["preto", "branco"],
+  },
+
+  //Conjunto May
+  {
+    titulo: "Conjunto May",
     preço: 135.0,
     preçoPeça: [
       {
-        semFlor: "",
-        comFlor: 135.0,
-        parteDeCima: 67.5,
+        top: 67.5,
         parteDeBaixo: 67.5,
       },
     ],
@@ -124,6 +133,44 @@ const Produtos = [
     preçoPeça: [{}],
     imagem: [vestido, vestido2],
     cores: ["rosa"],
+  },
+
+  //Saia
+  {
+    titulo: "Saia prata",
+    preço: 60.0,
+    preçoPeça: [{}],
+    imagem: [saiaPrata],
+    cores: ["único"],
+  },
+
+  //Conjunto biquíni
+  {
+    titulo: "Conjunto biquíni",
+    preço: 115.0,
+    preçoPeça: [
+      {
+        parteDeCima: 57.0,
+        parteDeBaixo: 57.0,
+      },
+    ],
+    imagem: [conjuntoBiquini],
+    cores: ["preto/prata", "preto", "rosa", "verde", "rosa/verde"],
+  },
+
+  //Conjunto Queridinho
+  {
+    titulo: "Conjunto Queridinho",
+    preçoTotal: 115.0,
+    preçoPeça: [
+      {
+        tiara: 18.0,
+        parteDeCima: 57.6,
+        parteDeBaixo: 57.5,
+      },
+    ],
+    imagem: [ConjuntoQueridinhoImagem],
+    cores: [],
   },
 ];
 

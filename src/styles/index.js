@@ -1,9 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-    primary: "#012545",
-  };
-  
+  primary: "#012545",
+};
 
 const EstiloGlobal = createGlobalStyle`
 
@@ -11,8 +10,13 @@ const EstiloGlobal = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: sans-serif;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
     }
-`
 
-export default EstiloGlobal
+    a:visited {
+        color: ${colors.primary}; // Cor para links visitados
+    }
+`;
+
+export default EstiloGlobal;

@@ -1,21 +1,31 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
 
+export const mainContent = styled.div`
+  @media (min-width: 700px) {
+    padding: 32px;
+  }
+`;
+
 export const Img = styled.img`
   max-width: 100%;
   padding: 16px;
   border-radius: 64px;
 `;
 
-export const MainContent = styled.div`
+export const DetailsProdutContent = styled.div`
   padding: 24px;
 
   > h3 {
-    margin-bottom: 8px;
+    margin: 8px 0px;
+  }
+
+  > h2 {
+    margin-bottom: 16px;
   }
 `;
 
-export const DetailsProdutContent = styled.div`
+export const ProdutContent = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -26,12 +36,12 @@ export const PriceContent = styled.div`
   padding: 12px;
 
   > p {
-    color: ${colors.primary};
+    color: #576f85;
     font-weight: bold;
   }
 `;
 
-export const CoresContainer = styled.div`
+export const OptionsContainer = styled.div`
   display: flex;
   gap: 8px;
 `;
@@ -43,4 +53,8 @@ export const CorButton = styled.button`
   border-radius: 8px;
   border: none;
   cursor: pointer;
+`;
+
+export const SendButton = styled.button`
+  margin-top: 32px;
 `;
