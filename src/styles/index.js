@@ -14,6 +14,10 @@ const EstiloGlobal = createGlobalStyle`
         text-decoration: none;
     }
 
+    body {
+        overflow-x: hidden;
+    }
+
     a:visited {
         color: ${colors.primary}; // Cor para links visitados
     }

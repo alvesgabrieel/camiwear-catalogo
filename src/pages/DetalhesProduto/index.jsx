@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,7 +8,6 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Produtos from "../../Produtos";
 
 import * as S from "./styles";
-import { useState } from "react";
 
 const DetalhesProduto = () => {
   const [selectePeça, setSelectedPeça] = useState(null);
@@ -25,23 +25,28 @@ const DetalhesProduto = () => {
 
   // >>> LÓGICA PARA SELECIONAR COR E TAMANHO E ENVIAR A MENSAGEM
 
-  const handlePeçaClick = (peca) => {
-    setSelectedPeça(peca);
+  const handlePeçaClick = (nomePeça) => {
+    setSelectedPeça(nomePeça);
   };
 
   const handleColorClick = (cor) => {
     setSelectedColor(cor);
   };
 
-  const numeroTelefone = +5584991943788;
-
   const handleSendClick = () => {
-    if (!selectePeça || !selectedColor) {
-      alert("Por favor, selecione tamanho e cor antes de enviar a mensagem.");
-      return;
+    const numeroTelefone = +5584991943788;
+    let mensagem = `Olá, estou interessado no produto ${produto.titulo}. \n`;
+
+    if (selectePeça && selectedColor) {
+      mensagem += `Peça: ${selectePeça}\nCor: ${selectedColor}`;
+    } else if (selectePeça) {
+      mensagem += `Peça: ${selectePeça}`;
+    } else if (selectedColor) {
+      mensagem += `Cor: ${selectedColor}`;
     }
 
-    const mensagem = `Olá, estou interessado no produto ${produto.titulo}.\nPeça: ${selectePeça}\nCor: ${selectedColor}\n\nPor favor, forneça mais informações.`;
+    mensagem += "\nPor favor, você poderia me ajudar?";
+
     const mensagemCodificada = encodeURIComponent(mensagem);
     const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${mensagemCodificada}`;
 
@@ -81,21 +86,13 @@ const DetalhesProduto = () => {
           </S.PriceContent>
         </S.ProdutContent>
         <h2>Selecione um cor ou peça: </h2>
-        <h3>Cores disponíveis</h3>
-        <S.OptionsContainer>
-          {produto.cores.map((cor, index) => (
-            <S.CorButton key={index} onClick={() => handleColorClick(cor)}>
-              {cor}
-            </S.CorButton>
-          ))}
-        </S.OptionsContainer>
         <h3>Peças</h3>
         <div>
           {produto.preçoPeça.map((peça, index) => (
             <S.OptionsContainer key={index}>
               {Object.entries(peça).map(([nomePeça, valorPeça]) => (
                 <div key={nomePeça} onClick={() => handlePeçaClick(nomePeça)}>
-                  <S.CorButton>
+                  <S.CorButton isSelected={nomePeça === selectePeça}>
                     {nomePeça}: R$ {valorPeça}
                   </S.CorButton>
                 </div>
@@ -103,6 +100,18 @@ const DetalhesProduto = () => {
             </S.OptionsContainer>
           ))}
         </div>
+        <h3>Cores disponíveis</h3>
+        <S.OptionsContainer>
+          {produto.cores.map((cor, index) => (
+            <S.CorButton
+              key={index}
+              onClick={() => handleColorClick(cor)}
+              isSelected={cor === selectedColor}
+            >
+              {cor}
+            </S.CorButton>
+          ))}
+        </S.OptionsContainer>
         <S.SendButton onClick={handleSendClick}>
           Enviar mensagem para o whatsapp
         </S.SendButton>

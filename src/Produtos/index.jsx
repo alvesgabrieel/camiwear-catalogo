@@ -54,7 +54,7 @@ const Produtos = [
       },
     ],
     imagem: [ConjuntoPraia],
-    cores: ["short preto", "short prata", "cropped preto", "cropped prata"],
+    cores: ["preto", "prata"],
   },
 
   //Maiô Gabb

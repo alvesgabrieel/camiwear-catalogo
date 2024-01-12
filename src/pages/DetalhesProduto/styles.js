@@ -48,8 +48,9 @@ export const OptionsContainer = styled.div`
 
 export const CorButton = styled.button`
   padding: 8px;
-  background-color: ${colors.primary};
-  color: white;
+  background-color: ${(props) =>
+    props.isSelected ? "##c3c3c3" : colors.primary};
+  color: ${(props) => (props.isSelected ? "black" : "white")};
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -57,4 +58,15 @@ export const CorButton = styled.button`
 
 export const SendButton = styled.button`
   margin-top: 32px;
+  background-color: #25d366; // Cor verde característica do WhatsApp
+  color: #ffffff; // Cor branca para o texto
+  border: none;
+  padding: 12px 20px; // Ajuste o preenchimento conforme necessário
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px; // Ajuste o tamanho da fonte conforme necessário
+
+  &:hover {
+    background-color: #128c7e; // Cor mais escura no hover
+  }
 `;
