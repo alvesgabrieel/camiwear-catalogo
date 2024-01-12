@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import Produtos from "../../Produtos";
 
 import * as S from "./styles";
 
 const DetalhesProduto = () => {
-  const [selectePeça, setSelectedPeça] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
 
   const { id } = useParams();
@@ -21,34 +21,34 @@ const DetalhesProduto = () => {
   const productId = parseInt(id, 10);
 
   // Encontrar o produto com base no ID
-  const produto = Produtos[productId];
+  const product = Produtos[productId];
 
   // >>> LÓGICA PARA SELECIONAR COR E TAMANHO E ENVIAR A MENSAGEM
 
-  const handlePeçaClick = (nomePeça) => {
-    setSelectedPeça(nomePeça);
+  const handleItemClick = (itemName) => {
+    setSelectedItem(itemName);
   };
 
-  const handleColorClick = (cor) => {
-    setSelectedColor(cor);
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
   };
 
   const handleSendClick = () => {
-    const numeroTelefone = +5584991943788;
-    let mensagem = `Olá, estou interessado no produto ${produto.titulo}. \n`;
+    const phoneNumber = +5584991943788;
+    let message = `Olá, estou interessado no produto ${product.titulo}. \n`;
 
-    if (selectePeça && selectedColor) {
-      mensagem += `Peça: ${selectePeça}\nCor: ${selectedColor}`;
-    } else if (selectePeça) {
-      mensagem += `Peça: ${selectePeça}`;
+    if (selectedItem && selectedColor) {
+      message += `Peça: ${selectedItem}\nCor: ${selectedColor}`;
+    } else if (selectedItem) {
+      message += `Peça: ${selectedItem}`;
     } else if (selectedColor) {
-      mensagem += `Cor: ${selectedColor}`;
+      message += `Cor: ${selectedColor}`;
     }
 
-    mensagem += "\nPor favor, você poderia me ajudar?";
+    message += "\nPor favor, você poderia me ajudar?";
 
-    const mensagemCodificada = encodeURIComponent(mensagem);
-    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${mensagemCodificada}`;
+    const encodedMessage = encodeURIComponent(message);
+    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
     // Redirecionar para o link do WhatsApp
     window.open(linkWhatsApp, "_blank");
@@ -70,31 +70,32 @@ const DetalhesProduto = () => {
   return (
     <S.mainContent>
       <Slider {...settings}>
-        {produto.imagem.map((imagem, index) => (
+        {product.imagem.map((imagem, index) => (
           <S.Img
             key={index}
             src={imagem}
-            alt={`Imagem ${index + 1} do produto ${produto.titulo}`}
+            alt={`Imagem ${index + 1} do produto ${product.titulo}`}
           />
         ))}
       </Slider>
       <S.DetailsProdutContent>
         <S.ProdutContent>
-          <h2>{produto.titulo}</h2>
+          <h2>{product.titulo}</h2>
           <S.PriceContent>
-            <p>R${produto.preço}</p>
+            <p>R${product.preço}</p>
           </S.PriceContent>
         </S.ProdutContent>
         <h2>Selecione um cor ou peça: </h2>
         <h3>Peças</h3>
         <div>
-          {produto.preçoPeça.map((peça, index) => (
+          {product.preçoPeça.map((item, index) => (
             <S.OptionsContainer key={index}>
-              {Object.entries(peça).map(([nomePeça, valorPeça]) => (
-                <div key={nomePeça} onClick={() => handlePeçaClick(nomePeça)}>
-                  <S.CorButton isSelected={nomePeça === selectePeça}>
-                    {nomePeça}: R$ {valorPeça}
-                  </S.CorButton>
+              {Object.entries(item).map(([itemName, itemValue]) => (
+                <div key={itemName} onClick={() => handleItemClick(itemName)}>
+                  <S.ButtonColor isSelected={itemName === selectedItem}>
+                    {itemName.charAt(0).toUpperCase() + itemName.slice(1)}: R${" "}
+                    {itemValue}
+                  </S.ButtonColor>
                 </div>
               ))}
             </S.OptionsContainer>
@@ -102,14 +103,14 @@ const DetalhesProduto = () => {
         </div>
         <h3>Cores disponíveis</h3>
         <S.OptionsContainer>
-          {produto.cores.map((cor, index) => (
-            <S.CorButton
+          {product.cores.map((color, index) => (
+            <S.ButtonColor
               key={index}
-              onClick={() => handleColorClick(cor)}
-              isSelected={cor === selectedColor}
+              onClick={() => handleColorClick(color)}
+              isSelected={color === selectedColor}
             >
-              {cor}
-            </S.CorButton>
+              {color}
+            </S.ButtonColor>
           ))}
         </S.OptionsContainer>
         <S.SendButton onClick={handleSendClick}>

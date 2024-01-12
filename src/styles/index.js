@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const colors = {
   primary: "#012545",
+  gray: "#c3c3c3",
+  priceContentColor: "#576f85",
+  whatsappColor: "#25d366",
+  whatsappColorHover: "#128c7e",
 };
 
 const EstiloGlobal = createGlobalStyle`
@@ -14,12 +18,8 @@ const EstiloGlobal = createGlobalStyle`
         text-decoration: none;
     }
 
-    body {
-        overflow-x: hidden;
-    }
-
     a:visited {
-        color: ${colors.primary}; // Cor para links visitados
+        color: ${colors.primary}; 
     }
 `;
 

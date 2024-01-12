@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { colors } from "../../styles";
 
 export const mainContent = styled.div`
@@ -31,12 +32,12 @@ export const ProdutContent = styled.div`
 `;
 
 export const PriceContent = styled.div`
-  border: 1px solid #576f85;
+  border: 1px solid ${colors.priceContentColor};
   border-radius: 16px;
   padding: 12px;
 
   > p {
-    color: #576f85;
+    color: ${colors.priceContentColor};
     font-weight: bold;
   }
 `;
@@ -46,10 +47,10 @@ export const OptionsContainer = styled.div`
   gap: 8px;
 `;
 
-export const CorButton = styled.button`
+export const ButtonColor = styled.button`
   padding: 8px;
   background-color: ${(props) =>
-    props.isSelected ? "##c3c3c3" : colors.primary};
+    props.isSelected ? colors.gray : colors.primary};
   color: ${(props) => (props.isSelected ? "black" : "white")};
   border-radius: 8px;
   border: none;
@@ -58,15 +59,15 @@ export const CorButton = styled.button`
 
 export const SendButton = styled.button`
   margin-top: 32px;
-  background-color: #25d366; // Cor verde característica do WhatsApp
-  color: #ffffff; // Cor branca para o texto
+  background-color: ${colors.whatsappColor};
+  color: #ffffff;
   border: none;
-  padding: 12px 20px; // Ajuste o preenchimento conforme necessário
+  padding: 12px 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px; // Ajuste o tamanho da fonte conforme necessário
+  font-size: 16px;
 
   &:hover {
-    background-color: #128c7e; // Cor mais escura no hover
+    background-color: ${colors.whatsappColorHover};
   }
 `;

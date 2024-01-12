@@ -1,16 +1,16 @@
 import ConjuntoQueridinhoImagem from "../assets/imgs/conjunto-queridinho.jpeg";
-import MaioGabb from "../assets/imgs/maio-gabb.jpeg";
-import MaioGabb2 from "../assets/imgs/maio-gabb2.jpg";
-import TopMay from "../assets/imgs/top-may.jpeg";
-import CalcinhaDuo from "../assets/imgs/calcinha-duo.jpeg";
-import CalcaKimono from "../assets/imgs/calca-kimono.jpeg";
+import maioGabb from "../assets/imgs/maio-gabb.jpeg";
+import maioGabb2 from "../assets/imgs/maio-gabb2.jpg";
+import topMay from "../assets/imgs/top-may.jpeg";
+import calcinhaDuo from "../assets/imgs/calcinha-duo.jpeg";
+import calcaKimono from "../assets/imgs/calca-kimono.jpeg";
 import vestido from "../assets/imgs/vestido.jpg";
 import vestido2 from "../assets/imgs/vestido2.jpg";
-import MaioRetro from "../assets/imgs/maio-retro.jpg";
-import ConjuntoPraia from "../assets/imgs/conjunto-praia.jpg";
-import ConjuntoArtesanal from "../assets/imgs/conjunto-artesanal.jpg";
-import CalcaPantalona from "../assets/imgs/conjunto-artesanal2.jpg";
-import VestidoMacrame from "../assets/imgs/vestido-mecrame.jpg";
+import maioRetro from "../assets/imgs/maio-retro.jpg";
+import conjuntoPraia from "../assets/imgs/conjunto-praia.jpg";
+import conjuntoArtesanal from "../assets/imgs/conjunto-artesanal.jpg";
+import calcaPantalona from "../assets/imgs/conjunto-artesanal2.jpg";
+import vestidoMacrame from "../assets/imgs/vestido-mecrame.jpg";
 import saiaPrata from "../assets/imgs/saia1.jpg";
 import saiaPretaComTop from "../assets/imgs/saia2.jpg";
 import conjuntoBiquini from "../assets/imgs/conjunto-biquini.jpg";
@@ -30,7 +30,7 @@ const Produtos = [
     titulo: "Calça pantalona",
     preço: 140.0,
     preçoPeça: [{}],
-    imagem: [CalcaPantalona],
+    imagem: [calcaPantalona],
     cores: ["único"],
   },
 
@@ -39,7 +39,7 @@ const Produtos = [
     titulo: "Top queridinho artesanal",
     preço: 60.0,
     preçoPeça: [{}],
-    imagem: [ConjuntoArtesanal],
+    imagem: [conjuntoArtesanal],
     cores: ["único"],
   },
 
@@ -53,7 +53,7 @@ const Produtos = [
         short: 60.0,
       },
     ],
-    imagem: [ConjuntoPraia],
+    imagem: [conjuntoPraia],
     cores: ["preto", "prata"],
   },
 
@@ -67,7 +67,7 @@ const Produtos = [
         ComFlor: "",
       },
     ],
-    imagem: [MaioGabb, MaioGabb2],
+    imagem: [maioGabb, maioGabb2],
     cores: ["rosa", "preto", "prata"],
   },
 
@@ -76,7 +76,7 @@ const Produtos = [
     titulo: "Maiô Reto",
     preço: 150.0,
     preçoPeça: [{}],
-    imagem: [MaioRetro],
+    imagem: [maioRetro],
     cores: ["prata", "preto", "preto/prata"],
   },
 
@@ -85,7 +85,7 @@ const Produtos = [
     titulo: "Vestido em macramê com pedraria",
     preço: 80.0,
     preçoPeça: [{}],
-    imagem: [VestidoMacrame],
+    imagem: [vestidoMacrame],
     cores: ["preto", "branco"],
   },
 
@@ -96,10 +96,10 @@ const Produtos = [
     preçoPeça: [
       {
         top: 67.5,
-        parteDeBaixo: 67.5,
+        calcinha: 67.5,
       },
     ],
-    imagem: [TopMay],
+    imagem: [topMay],
     cores: ["verde", "rosa", "verde/rosa", "preto", "prata", "preto/prata"],
   },
 
@@ -108,7 +108,7 @@ const Produtos = [
     titulo: "Calcinha Duo",
     preço: 62.5,
     preçoPeça: [{}],
-    imagem: [CalcinhaDuo],
+    imagem: [calcinhaDuo],
     cores: ["único"],
   },
 
@@ -122,7 +122,7 @@ const Produtos = [
         kimono: 130.0,
       },
     ],
-    imagem: [CalcaKimono],
+    imagem: [calcaKimono],
     cores: ["rosa", "bege"],
   },
 
@@ -165,8 +165,8 @@ const Produtos = [
     preçoPeça: [
       {
         tiara: 18.0,
-        parteDeCima: 57.6,
-        parteDeBaixo: 57.5,
+        top: 57.6,
+        calcinha: 57.5,
       },
     ],
     imagem: [ConjuntoQueridinhoImagem],
